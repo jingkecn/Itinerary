@@ -1,0 +1,58 @@
+Bakerloo_line	Paddington	0
+Bakerloo_line	Marylebone	1
+Bakerloo_line	Baker Street	2
+Bakerloo_line	Oxford Circus	3
+Bakerloo_line	Piccadilly Circus	4
+Bakerloo_line	Charing Cross	5
+Bakerloo_line	Embankment	6
+Bakerloo_line	Waterloo	7
+Central_line	Shepherd's Bush	0
+Central_line	Notting Hill Gate	1
+Central_line	Bond Street	2
+Central_line	Oxford Circus	3
+Central_line	Tottenham Court Road	4
+Central_line	Holborn	5
+Central_line	Bank	6
+Central_line	Liverpool Street	7
+Circle_line	Edgware Road	0
+Circle_line	Paddington	1
+Circle_line	Notting Hill Gate	2
+Circle_line	South Kensington	3
+Circle_line	Victoria	4
+Circle_line	Westminster	5
+Circle_line	Embankment	6
+Circle_line	Cannon Street	7
+Circle_line	Monument	8
+Circle_line	Tower Hill	9
+Hammersmith_line	Paddington	0
+Hammersmith_line	Edgware Road	1
+Hammersmith_line	Baker Street	2
+Hammersmith_line	King's Cross St. Pancras	3
+Hammersmith_line	Farringdon	4
+Hammersmith_line	Moorgate	5
+Hammersmith_line	Liverpool Street	6
+Hammersmith_line	Aldgate East	7
+Jubilee_line	Baker Street	0
+Jubilee_line	Bond Street	1
+Jubilee_line	Green Park	2
+Jubilee_line	Westminster	3
+Jubilee_line	Waterloo	4
+Nothern_line	Euston	0
+Nothern_line	Warren Street	1
+Nothern_line	Tottenham Court Road	2
+Nothern_line	Leicester Square	3
+Nothern_line	Charing Cross	4
+Nothern_line	Embankment	5
+Nothern_line	Waterloo	6
+Piccadilly_line	South Kensington	0
+Piccadilly_line	Green Park	1
+Piccadilly_line	Piccadilly Circus	2
+Piccadilly_line	Leicester Square	3
+Piccadilly_line	Holborn	4
+Piccadilly_line	King's Cross St. Pancras	5
+Victoria_line	Victoria	0
+Victoria_line	Green Park	1
+Victoria_line	Oxford Circus	2
+Victoria_line	Warren Street	3
+Victoria_line	Euston	4
+Victoria_line	King's Cross St. Pancras	5
