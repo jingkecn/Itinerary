@@ -2,4 +2,5 @@ Itinerary
 =========
 
 Programmation orientée objet - TP2&amp;3
-#À finir...
+#Finalement fini!
+##Mais seulement affiche une solution avec un seul transfert...
