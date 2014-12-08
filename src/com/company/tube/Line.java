@@ -24,7 +24,7 @@ public class Line {
 	/*
      * Writes the code corresponding to the following example:
 	 * */
-	/*public static void main(String[] args) {
+    /*public static void main(String[] args) {
 		Line line = new Line("Jubilee_line");
 		line.addStation("Baker Street");
 		line.addStation("Bond Street");

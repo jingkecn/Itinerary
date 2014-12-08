@@ -41,7 +41,7 @@ public class Tube {
         Station station = null;
         for (Station s : stations) {
             distance = ((x - s.getX()) * (x - s.getX()) + (y - s.getY()) * (y - s.getY()));
-            if (distance < minDist){
+            if (distance < minDist) {
                 station = s;
                 minDist = distance;
             }
@@ -55,27 +55,24 @@ public class Tube {
         boolean dir;
         for (Line line : lines) {
             if (line.getStations().contains(from) && line.getStations().contains(to)) {
-                /*for (int i = line.getStations().indexOf(from); i <= line.getStations().indexOf(to); i++) {
-                    directItinerary.add(line.getStations().get(i));
-                }*/
                 dir = (line.getStations().indexOf(from) < line.getStations().indexOf(to));
                 directItinerary.addAll(line.getStations().subList(
-                       dir ? line.getStations().indexOf(from) : line.getStations().indexOf(to),
-                       dir ? line.getStations().indexOf(to) + 1 : line.getStations().indexOf(from) + 1
+                        dir ? line.getStations().indexOf(from) : line.getStations().indexOf(to),
+                        dir ? line.getStations().indexOf(to) + 1 : line.getStations().indexOf(from) + 1
                 ));
             }
         }
         return directItinerary;
     }
 
-    public Set<String> findItinerary(String from, String to){
+    public Set<String> findItinerary(String from, String to) {
         itinerary = new HashSet<String>();
-        if (!findDirectItinerary(from, to).isEmpty()){
+        if (!findDirectItinerary(from, to).isEmpty()) {
             itinerary = findDirectItinerary(from, to);
         } else {
-            for (String lName : getStationByName(from).getLines()){
-                for (String sName : getLineByName(lName).getStations()){
-                    if (!findDirectItinerary(sName, to).isEmpty()){
+            for (String lName : getStationByName(from).getLines()) {
+                for (String sName : getLineByName(lName).getStations()) {
+                    if (!findDirectItinerary(sName, to).isEmpty()) {
                         itinerary.addAll(findDirectItinerary(from, sName));
                         itinerary.addAll(findDirectItinerary(sName, to));
                     }
@@ -85,20 +82,20 @@ public class Tube {
         return itinerary;
     }
 
-    private Station getStationByName(String name){
+    private Station getStationByName(String name) {
         Station station = null;
-        for (Station s : stations){
-            if (s.getName().equalsIgnoreCase(name)){
+        for (Station s : stations) {
+            if (s.getName().equalsIgnoreCase(name)) {
                 station = s;
             }
         }
         return station;
     }
 
-    private Line getLineByName(String name){
+    private Line getLineByName(String name) {
         Line line = null;
-        for (Line l : lines){
-            if (l.getName().equalsIgnoreCase(name)){
+        for (Line l : lines) {
+            if (l.getName().equalsIgnoreCase(name)) {
                 line = l;
             }
         }

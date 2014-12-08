@@ -49,7 +49,7 @@ public class TabFileReader {
      * @param args
      */
     /*public static void main(String[] args) {
-		String filename="lines.txt";
+        String filename="lines.txt";
 		TabFileReader.readTextFile(filename,'\t',"data");
 		for (int i=0;i<TabFileReader.nrow();i++){
 			for (int j=0; j<TabFileReader.ncol();j++)

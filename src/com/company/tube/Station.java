@@ -33,7 +33,7 @@ public class Station {
     }
 
 	/*
-	 * Writes the code corresponding to the following example:
+     * Writes the code corresponding to the following example:
 	 * 
 	 * this main outputs the following message:
 	 * station= Baker Street, coord.= (425,126)
