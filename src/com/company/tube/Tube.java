@@ -29,6 +29,10 @@ public class Tube {
         return stations.get(i);
     }
 
+    public Line lineAt(int pos) {
+        return lines.get(pos);
+    }
+
     /* dummy code */
     public Station findClosestStation(int x, int y) {
         int minDist = Integer.MAX_VALUE;
@@ -97,9 +101,5 @@ public class Tube {
             }
         }
         return line;
-    }
-
-    public Line lineAt(int pos) {
-        return lines.get(pos);
     }
 }
