@@ -3,19 +3,23 @@ package com.company.tube;
 import com.company.Model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Tube {
 
     private ArrayList<Station> stations;
     private ArrayList<Line> lines;
-    private String[] directItinerary;
-    private int cnt;
+    //private String[] directItinerary;
+    private Set<String> directItinerary;
+    //private int cntLines;
 
     public Tube() {
         stations = new ArrayList<Station>(Model.readStations());
         lines = new ArrayList<Line>(Model.readLines());
-        directItinerary = new String[10];
-        cnt = 0;
+        //directItinerary = new String[10];
+        //directItinerary = new HashSet<String>();
+        //cntLines = 0;
     }
 
 
@@ -31,24 +35,27 @@ public class Tube {
 
     /* dummy code */
     public Station findClosestStation(int x, int y) {
-        double minDistInv = 0;
-        double distance;
+        int minDist = Integer.MAX_VALUE;
+        int distance;
         Station station = null;
         for (Station s : stations) {
-            distance = (double) ((x - s.getX()) ^ 2 + (y - s.getY()) ^ 2);
-            if (distance != 0.0 && 1.0 / distance > minDistInv) {
-                minDistInv = 1.0 / distance;
+            distance = ((x - s.getX()) * (x - s.getX()) + (y - s.getY()) * (y - s.getY()));
+            if (distance < minDist){
                 station = s;
+                minDist = distance;
             }
         }
         return station;
     }
 
     /* dummy code */
-    public String[] findDirectItinerary(String from, String to) {
+    public Set<String> findDirectItinerary(String from, String to) {
+        directItinerary = new HashSet<String>();
         for (Line line : lines) {
             if (line.getStations().contains(from) && line.getStations().contains(to)) {
-                directItinerary[cnt++] = line.getName();
+                for (int i = line.getStations().indexOf(from); i <= line.getStations().indexOf(to); i++) {
+                    directItinerary.add(line.getStations().get(i));
+                }
             }
         }
         return directItinerary;

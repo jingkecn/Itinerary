@@ -7,6 +7,8 @@ package com.company.tube;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Control {
     private TubeView tv;
@@ -31,7 +33,7 @@ public class Control {
         System.out.println("USER ACTION: line selection, index= " + pos);
         Line line = tube.lineAt(pos);
         ArrayList<String> selArr = line.getStations();
-        String[] sel = new String[50];
+        String[] sel = new String[selArr.size()];
         for (int i = 0; i < selArr.size(); i++) {
             sel[i] = selArr.get(i);
         }
@@ -52,9 +54,12 @@ public class Control {
             tv.show(sel);
         } else if (end == null) {
             end = station;
-            String[] sel = tube.findDirectItinerary(begin, end);
+            Set<String> selSet = new HashSet<String>(tube.findDirectItinerary(begin, end));
+            System.out.println(selSet);
+            String[] sel = selSet.toArray(new String[selSet.size()]);
             if (sel == null) {
                 JOptionPane.showMessageDialog(tv, "No direct path has been found.");
+                System.out.println("No direct path has been found.");
                 sel = null;
                 begin = null;
                 end = null;
