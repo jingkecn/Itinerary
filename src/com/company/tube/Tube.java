@@ -10,17 +10,12 @@ public class Tube {
 
     private ArrayList<Station> stations;
     private ArrayList<Line> lines;
-    //private String[] directItinerary;
     private Set<String> directItinerary;
     private Set<String> itinerary;
-    //private int cntLines;
 
     public Tube() {
         stations = new ArrayList<Station>(Model.readStations());
         lines = new ArrayList<Line>(Model.readLines());
-        //directItinerary = new String[10];
-        //directItinerary = new HashSet<String>();
-        //cntLines = 0;
     }
 
 
