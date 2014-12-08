@@ -33,10 +33,7 @@ public class Control {
         System.out.println("USER ACTION: line selection, index= " + pos);
         Line line = tube.lineAt(pos);
         ArrayList<String> selArr = line.getStations();
-        String[] sel = new String[selArr.size()];
-        for (int i = 0; i < selArr.size(); i++) {
-            sel[i] = selArr.get(i);
-        }
+        String[] sel = selArr.toArray(new String[selArr.size()]);
         tv.show(sel);
     }
 

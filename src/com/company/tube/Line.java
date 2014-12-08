@@ -49,10 +49,5 @@ public class Line {
         if (!stations.contains(station)) {
             stations.add(station);
         }
-		/*for (Station station : stations){
-			if (station.getName().equalsIgnoreCase(name)){
-				stations.add(station);
-			}
-		}*/
     }
 }
