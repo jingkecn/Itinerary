@@ -70,11 +70,13 @@ public class Tube {
         if (!findDirectItinerary(from, to).isEmpty()) {
             itinerary = findDirectItinerary(from, to);
         } else {
+            boolean stop = false;
             for (String lName : getStationByName(from).getLines()) {
                 for (String sName : getLineByName(lName).getStations()) {
-                    if (!findDirectItinerary(sName, to).isEmpty()) {
+                    if (!findDirectItinerary(sName, to).isEmpty() && !stop) {
                         itinerary.addAll(findDirectItinerary(from, sName));
                         itinerary.addAll(findDirectItinerary(sName, to));
+                        stop = true;
                     }
                 }
             }
