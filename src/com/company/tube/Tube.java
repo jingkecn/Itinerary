@@ -12,6 +12,7 @@ public class Tube {
     private ArrayList<Line> lines;
     //private String[] directItinerary;
     private Set<String> directItinerary;
+    private Set<String> itinerary;
     //private int cntLines;
 
     public Tube() {
@@ -51,14 +52,57 @@ public class Tube {
     /* dummy code */
     public Set<String> findDirectItinerary(String from, String to) {
         directItinerary = new HashSet<String>();
+        boolean dir;
         for (Line line : lines) {
             if (line.getStations().contains(from) && line.getStations().contains(to)) {
-                for (int i = line.getStations().indexOf(from); i <= line.getStations().indexOf(to); i++) {
+                /*for (int i = line.getStations().indexOf(from); i <= line.getStations().indexOf(to); i++) {
                     directItinerary.add(line.getStations().get(i));
-                }
+                }*/
+                dir = (line.getStations().indexOf(from) < line.getStations().indexOf(to));
+                directItinerary.addAll(line.getStations().subList(
+                       dir ? line.getStations().indexOf(from) : line.getStations().indexOf(to),
+                       dir ? line.getStations().indexOf(to) + 1 : line.getStations().indexOf(from) + 1
+                ));
             }
         }
         return directItinerary;
+    }
+
+    public Set<String> findItinerary(String from, String to){
+        itinerary = new HashSet<String>();
+        if (!findDirectItinerary(from, to).isEmpty()){
+            itinerary = findDirectItinerary(from, to);
+        } else {
+            for (String lName : getStationByName(from).getLines()){
+                for (String sName : getLineByName(lName).getStations()){
+                    if (!findDirectItinerary(sName, to).isEmpty()){
+                        itinerary.addAll(findDirectItinerary(from, sName));
+                        itinerary.addAll(findDirectItinerary(sName, to));
+                    }
+                }
+            }
+        }
+        return itinerary;
+    }
+
+    private Station getStationByName(String name){
+        Station station = null;
+        for (Station s : stations){
+            if (s.getName().equalsIgnoreCase(name)){
+                station = s;
+            }
+        }
+        return station;
+    }
+
+    private Line getLineByName(String name){
+        Line line = null;
+        for (Line l : lines){
+            if (l.getName().equalsIgnoreCase(name)){
+                line = l;
+            }
+        }
+        return line;
     }
 
     public Line lineAt(int pos) {
