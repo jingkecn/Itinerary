@@ -70,7 +70,7 @@ public class Tube {
         if (!findDirectItinerary(from, to).isEmpty()) {
             itinerary = findDirectItinerary(from, to);
         } else {
-            boolean stop = false;
+            boolean stop = false;   // Simplify the method of searching itinerary, inspired by Elias
             for (String lName : getStationByName(from).getLines()) {
                 for (String sName : getLineByName(lName).getStations()) {
                     if (!findDirectItinerary(sName, to).isEmpty() && !stop) {
