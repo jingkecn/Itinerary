@@ -55,9 +55,9 @@ public class Control {
         } else if (end == null) {
             end = station;
             Set<String> selSet = new HashSet<String>(tube.findDirectItinerary(begin, end));
-            System.out.println(selSet);
+            //System.out.println(selSet);
             String[] sel = selSet.toArray(new String[selSet.size()]);
-            if (sel == null) {
+            if (selSet.isEmpty()) {
                 JOptionPane.showMessageDialog(tv, "No direct path has been found.");
                 System.out.println("No direct path has been found.");
                 sel = null;
