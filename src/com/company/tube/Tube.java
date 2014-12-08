@@ -76,7 +76,7 @@ public class Tube {
                         itinerary.addAll(findDirectItinerary(from, sName));
                         itinerary.addAll(findDirectItinerary(sName, to));
                         stop = true;
-                    } else if (stop){
+                    } else if (stop) {
                         break;
                     }
                 }
