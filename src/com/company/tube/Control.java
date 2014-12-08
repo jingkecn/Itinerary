@@ -45,7 +45,7 @@ public class Control {
      * -----------------------------------------------------------
      */
     public void showItinerary(int x, int y) {
-        String station = null;
+        String station;
         station = tube.findClosestStation(x, y).getName();
         System.out.println("USER ACTION: station selection = " + station);
         if (begin == null) {
